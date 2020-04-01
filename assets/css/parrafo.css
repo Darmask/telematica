@@ -1,0 +1,28 @@
+
+body{
+    text-align: center;
+}
+h1{
+    
+    display: inline-block; /** Nos sirve que solo ocupe el espacio del texto */
+    position: relative;
+}
+h1::after,h1::before{
+    content: '';
+    position: absolute;
+    width: 120px; /** Para indicar que tan ancho queremos las lineas*/
+    height: 3px;  /** Para indicar que tan grueso queremos las lineas*/
+    background-color: currentColor;
+    top: 18px;
+    transform: scale(0);
+    transition: all 0.2s ease-in;
+}
+h1:hover::after , h1:hover::before{
+    transform: scale(1);
+}
+h1::before{
+    left: -140px;
+}
+h1::after{
+    right: -140px;
+}
